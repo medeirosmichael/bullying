@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Respeito em Ação | Juntos contra o Bullying</title>
+    <!-- Font Awesome 6 (ícones gratuitos) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #ffffff;  /* fundo totalmente branco, conforme solicitado */
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #1e2a3e;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        /* container centralizado com respiro */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+        }
+
+        /* cabeçalho elegante com borda suave */
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 3px solid #f0a3a3;
+            background-color: #ffffff;
+        }
+
+        .logo-icon {
+            font-size: 3rem;
+            color: #e3342f;
+            margin-bottom: 0.5rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #c53030, #e88d8d);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            font-weight: 400;
+            border-top: 1px solid #f0c2c2;
+            display: inline-block;
+            padding-top: 0.6rem;
+        }
+
+        /* seções gerais */
+        section {
+            background-color: #ffffff;
+            margin-bottom: 3.5rem;
+            border-radius: 28px;
+            transition: all 0.2s ease;
+        }
+
+        .section-title {
+            font-size: 1.9rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-left: 6px solid #e63946;
+            padding-left: 1rem;
+            color: #0f2b3d;
+        }
+
+        .section-title i {
+            color: #e63946;
+            font-size: 1.8rem;
+        }
+
+        /* cards de tipos de bullying */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.8rem;
+            margin-top: 1rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 1.6rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+            border: 1px solid #f0e2e2;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.1);
+            border-color: #ffcdcd;
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            color: #e65c5c;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+            color: #c0392b;
+        }
+
+        .card p {
+            color: #2d3e50;
+            font-size: 0.95rem;
+        }
+
+        /* lista de sinais (dois layouts) */
+        .signs-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            background: #ffffff;
+            padding: 0.2rem 0;
+        }
+
+        .signs-list {
+            flex: 1;
+            min-width: 220px;
+            background: #fef9f9;
+            padding: 1.2rem 1.5rem;
+            border-radius: 28px;
+            border: 1px solid #ffe0e0;
+        }
+
+        .signs-list ul {
+            list-style: none;
+        }
+
+        .signs-list li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1rem;
+        }
+
+        .signs-list li i {
+            width: 28px;
+            color: #e65c5c;
+            font-size: 1.2rem;
+        }
+
+        /* como agir - steps horizontais */
+        .steps-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .step {
+            background: #ffffff;
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 1.5rem 1rem;
+            border-radius: 32px;
+            border: 1px solid #ffefef;
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.02);
+        }
+
+        .step-number {
+            background: #e63946;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 60px;
+            color: white;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin: 0 auto 1rem auto;
+        }
+
+        .step h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #b91c1c;
+        }
+
+        /* canais de ajuda com cartões */
+        .help-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .help-card {
+            background: #ffffff;
+            border: 1px solid #ffd9d9;
+            border-radius: 28px;
+            padding: 1.4rem;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .help-card i {
+            font-size: 2.2rem;
+            color: #e63946;
+            margin-bottom: 0.8rem;
+        }
+
+        .help-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .help-card p {
+            font-weight: 500;
+            color: #2c3e50;
+            margin: 0.5rem 0;
+        }
+
+        .btn-ajuda {
+            background: none;
+            border: 2px solid #e63946;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            color: #e63946;
+            margin-top: 0.8rem;
+            cursor: pointer;
+            transition: 0.2s;
+            font-size: 0.85rem;
+        }
+
+        .btn-ajuda:hover {
+            background: #e63946;
+            color: white;
+        }
+
+        /* depoimento simples e call to action */
+        .callout {
+            background: #fef6f6;
+            border-radius: 32px;
+            padding: 2rem;
+            text-align: center;
+            border-left: 5px solid #e63946;
+            margin: 2rem 0 1rem;
+        }
+
+        .callout p {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .btn-principal {
+            background: #e63946;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 48px;
+            font-weight: bold;
+            font-size: 1rem;
+            color: white;
+            margin-top: 1rem;
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-principal:hover {
+            background: #b91c1c;
+            transform: scale(1.02);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #f0d6d6;
+            font-size: 0.85rem;
+            color: #4a5b6e;
+            background: #ffffff;
+        }
+
+        footer i {
+            color: #e63946;
+        }
+
+        /* responsividade */
+        @media (max-width: 780px) {
+            .container {
+                padding: 1rem 1.2rem;
+            }
+            h1 {
+                font-size: 1.9rem;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+            .cards-grid {
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .step {
+                min-width: 100%;
+            }
+            .signs-list {
+                min-width: 100%;
+            }
+        }
+
+        /* estilo botão de apoio flutuante? não necessário, mas manter limpo */
+        .highlight {
+            background-color: #fff2f2;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="logo-icon">
+            <i class="fas fa-hand-holding-heart"></i>
+        </div>
+        <h1>Bullying: Fique Atento, Faça a Diferença</h1>
+        <div class="tagline">Respeito, empatia e coragem para transformar realidades</div>
+    </header>
+
+    <main>
+        <!-- Seção: O que é bullying -->
+        <section>
+            <div class="section-title">
+                <i class="fas fa-circle-info"></i>
+                <span>O que é bullying?</span>
+            </div>
+            <div style="background:#fff; padding:0 0.2rem;">
+                <p style="font-size:1.1rem; margin-bottom:0.5rem;">Bullying é todo ato de violência física ou psicológica, intencional e repetitivo, que ocorre sem motivação evidente, praticado por um ou mais indivíduos contra outra pessoa. Causa dor, isolamento e pode afetar profundamente a saúde emocional e o desenvolvimento de crianças e adolescentes. <strong>Ninguém merece sofrer calado.</strong></p>
+                <p style="margin-top:0.8rem;">O silêncio fortalece o agressor. Informar-se é o primeiro passo para criar um ambiente seguro e acolhedor nas escolas, no trabalho e nas relações sociais.</p>
+            </div>
+        </section>
+
+        <!-- Tipos de Bullying (cards) -->
+        <section>
+            <div class="section-title">
+                <i class="fas fa-shield-haltered"></i>
+                <span>Formas de bullying</span>
+            </div>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-comment-slash"></i></div>
+                    <h3>Bullying Verbal</h3>
+                    <p>Insultos, xingamentos, apelidos ofensivos, humilhação e fofocas maldosas. Agride a dignidade e autoestima.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-fist-raised"></i></div>
+                    <h3>Bullying Físico</h3>
+                    <p>Empurrões, socos, chutes, danos a pertences e qualquer agressão contra o corpo da vítima.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-users-slash"></i></div>
+                    <h3>Bullying Social</h3>
+                    <p>Isolamento proposital, exclusão de grupos, ignorar a pessoa propositalmente e espalhar boatos.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Cyberbullying</h3>
+                    <p>Ameaças, difamação ou exposição íntima pela internet, redes sociais e aplicativos. A dor vai além da escola.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sinais de alerta -->
+        <section>
+            <div class="section-title">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span>Sinais de alerta (vítimas e testemunhas)</span>
+            </div>
+            <div class="signs-wrapper">
+                <div class="signs-list">
+                    <ul>
+                        <li><i class="fas fa-frown-open"></i> Mudança repentina de humor, tristeza frequente</li>
+                        <li><i class="fas fa-school"></i> Perda de interesse pela escola ou atividades</li>
+                        <li><i class="fas fa-band-aid"></i> Machucados ou desculpas inconsistentes</li>
+                        <li><i class="fas fa-mobile-alt"></i> Evitar redes sociais ou ficar nervoso ao receber mensagens</li>
+                    </ul>
+                </div>
+                <div class="signs-list">
+                    <ul>
+                        <li><i class="fas fa-chart-line"></i> Queda no rendimento escolar</li>
+                        <li><i class="fas fa-bed"></i> Dores de cabeça, insônia ou pesadelos constantes</li>
+                        <li><i class="fas fa-comment-dots"></i> Isolamento de amigos ou familiares</li>
+                        <li><i class="fas fa-hand-peace"></i> Perda de pertences ou dinheiro "sem explicação"</li>
+                    </ul>
+                </div>
+            </div>
+            <p style="margin-top: 1rem; font-size:0.9rem; background:#fef1f1; padding:0.8rem; border-radius:28px;"><i class="fas fa-lightbulb" style="margin-right:8px; color:#e63946;"></i> Se você perceber esses sinais em alguém, ofereça apoio e escute sem julgamentos. Acolhimento salva vidas.</p>
+        </section>
+
+        <!-- Como agir / Prevenção -->
+        <section>
+            <div class="section-title">
+                <i class="fas fa-people-arrows"></i>
+                <span>Como agir contra o bullying</span>
+            </div>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Fale com alguém de confiança</h4>
+                    <p>Professores, familiares, psicólogos. Não enfrente isso sozinho.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Registre e denuncie</h4>
+                    <p>Guarde prints, mensagens, testemunhas. Denuncie na escola ou em canais oficiais.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Ofereça apoio a quem sofre</h4>
+                    <p>Ser testemunha ativa: mostre solidariedade, não alimente o agressor.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h4>Busque ajuda profissional</h4>
+                    <p>Psicólogos, linhas de apoio como CVV 188 e centros especializados.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Canais de ajuda oficiais -->
+        <section>
+            <div class="section-title">
+                <i class="fas fa-phone-volume"></i>
+                <span>Canais de Ajuda — você não está sozinho</span>
+            </div>
+            <div class="help-grid">
+                <div class="help-card">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>Centro de Valorização da Vida</h3>
+                    <p><strong>Ligue 188</strong> (24h)</p>
+                    <p>Apoio emocional e prevenção ao suicídio. Atendimento gratuito.</p>
+                    <button class="btn-ajuda" id="btnCvv">Saber mais <i class="fas fa-arrow-right"></i></button>
+                </div>
+                <div class="help-card">
+                    <i class="fas fa-gavel"></i>
+                    <h3>Disque Direitos Humanos</h3>
+                    <p><strong>Disque 100</strong></p>
+                    <p>Denuncie violações de direitos, incluindo bullying sistemático.</p>
+                    <button class="btn-ajuda" id="btnDisque100">Orientação <i class="fas fa-arrow-right"></i></button>
+                </div>
+                <div class="help-card">
+                    <i class="fas fa-school"></i>
+                    <h3>Conselho Tutelar</h3>
+                    <p>Busque o conselho da sua cidade</p>
+                    <p>Proteção para crianças e adolescentes em situação de risco.</p>
+                    <button class="btn-ajuda" id="btnConselho">Saiba mais <i class="fas fa-arrow-right"></i></button>
+                </div>
+                <div class="help-card">
+                    <i class="fas fa-hands-helping"></i>
+                    <h3>SaferNet Brasil</h3>
+                    <p>Cyberbullying: denúncias anônimas</p>
+                    <p>www.safernet.org.br | canal de remoção de conteúdo ofensivo.</p>
+                    <button class="btn-ajuda" id="btnSafer">Acessar site <i class="fas fa-external-link-alt"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to action / apoio imediato -->
+        <div class="callout">
+            <p><i class="fas fa-quote-left" style="margin-right:8px; color:#e63946;"></i> "Pequenos gestos de acolhimento transformam vidas. Se você está sofrendo bullying, peça ajuda. Se você presencia, aja."</p>
+            <button class="btn-principal" id="helpMeBtn"><i class="fas fa-comment-dots"></i> Preciso de ajuda agora</button>
+            <p style="font-size:0.85rem; margin-top:12px;">Atendimento sigiloso e respeitoso. Ligue 188 ou clique para mais informações.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p><i class="fas fa-ribbon"></i> Respeito é a base. Campanha de conscientização — informação e empatia contra o bullying.</p>
+        <p style="margin-top: 0.5rem;">© 2025 · Juntos contra o bullying · Compartilhe essa mensagem</p>
+    </footer>
+</div>
+
+<script>
+    // Função auxiliar para alertas informativos e direcionamento respeitoso
+    function showHelpAlert(message) {
+        alert(message);
+    }
+
+    // Botão principal "Preciso de ajuda agora"
+    const helpBtn = document.getElementById('helpMeBtn');
+    if (helpBtn) {
+        helpBtn.addEventListener('click', () => {
+            showHelpAlert("📢 Você não está sozinho(a)! Entre em contato com o Centro de Valorização da Vida (CVV) pelo telefone 188 (24h, ligação gratuita).\n\nDisque 100 também recebe denúncias de violência. Converse com um adulto de confiança, procure a orientação de um psicólogo escolar ou conselho tutelar. Sua segurança emocional é prioridade. 💙");
+        });
+    }
+
+    // Botões dos canais de ajuda interativos (informações complementares)
+    const btnCvv = document.getElementById('btnCvv');
+    if (btnCvv) {
+        btnCvv.addEventListener('click', () => {
+            showHelpAlert("🔹 CVV – Centro de Valorização da Vida\n📞 188 (24h)\n💻 Site: www.cvv.org.br\nOferece apoio emocional gratuito e sigiloso para quem precisa conversar, inclusive sobre bullying. Ligue agora se sentir angústia ou solidão.");
+        });
+    }
+
+    const btnDisque100 = document.getElementById('btnDisque100');
+    if (btnDisque100) {
+        btnDisque100.addEventListener('click', () => {
+            showHelpAlert("📞 Disque 100 – Direitos Humanos\nCanal oficial para denúncias de violações contra crianças e adolescentes, incluindo casos graves de bullying, discriminação e agressões. A denúncia pode ser anônima e ajuda a proteger vítimas.");
+        });
+    }
+
+    const btnConselho = document.getElementById('btnConselho');
+    if (btnConselho) {
+        btnConselho.addEventListener('click', () => {
+            showHelpAlert("⚖️ Conselho Tutelar\nCada município possui um Conselho Tutelar para proteção de crianças e adolescentes. Se o bullying envolver agressões recorrentes ou omissão da escola, procure o conselho mais próximo. Eles aplicam medidas de proteção.");
+        });
+    }
+
+    const btnSafer = document.getElementById('btnSafer');
+    if (btnSafer) {
+        btnSafer.addEventListener('click', () => {
+            window.open('https://www.safernet.org.br', '_blank', 'noopener noreferrer');
+            showHelpAlert("Redirecionando para o site da SaferNet Brasil. Lá você encontra orientações sobre cyberbullying, remoção de conteúdo ofensivo e denúncias anônimas.");
+        });
+    }
+
+    // Caso queira um alerta extra nos cards principais? Nenhuma ação invasiva, mantemos apenas informativo.
+    // Adiciona um pequeno efeito de suporte nos cards de tipos (opcional, apenas console não intrusivo)
+    console.log("Site de conscientização sobre bullying carregado - Apoie quem precisa.");
+</script>
+</body>
+</html>
