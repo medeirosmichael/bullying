@@ -43,6 +43,29 @@
             margin-bottom: 0.5rem;
         }
 
+        /* Container da imagem adicionada */
+        .header-image {
+            margin: 1rem auto 1rem auto;
+            max-width: 180px;
+            border-radius: 36px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease;
+            background: #fff;
+        }
+
+        .header-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 36px;
+            object-fit: cover;
+        }
+
+        .header-image:hover {
+            transform: scale(1.02);
+        }
+
         h1 {
             font-size: 2.5rem;
             letter-spacing: -0.5px;
@@ -325,6 +348,9 @@
             .signs-list {
                 min-width: 100%;
             }
+            .header-image {
+                max-width: 140px;
+            }
         }
 
         /* estilo botão de apoio flutuante? não necessário, mas manter limpo */
@@ -339,6 +365,14 @@
         <div class="logo-icon">
             <i class="fas fa-hand-holding-heart"></i>
         </div>
+
+        <!-- Imagem adicionada conforme solicitação do usuário -->
+        <div class="header-image">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVrUGeaiv91JYJyC3cilYxTyLMomnBK-_HWA&s"
+                 alt="Símbolo de conscientização contra o bullying - união e respeito"
+                 title="Juntos contra o bullying">
+        </div>
+
         <h1>Bullying: Fique Atento, Faça a Diferença</h1>
         <div class="tagline">Respeito, empatia e coragem para transformar realidades</div>
     </header>
